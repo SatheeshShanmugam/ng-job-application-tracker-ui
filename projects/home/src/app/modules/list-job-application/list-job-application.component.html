@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <h1>Job Application Tracker</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6" style="width:100%">
+      <button class="save-btn" (click)="openModal()">Add Job Application</button>
+    </div>
+    <div class="table-container">
+      <!-- Status Messages -->
+      <div class="status-messages">
+        <p *ngIf="(error$ | async)?.length" class="error">
+          Error: {{ error$ }}
+        </p>
+      </div>
+      <!-- Data Table -->
+      <form [formGroup]="jobApplicationsForm" (ngSubmit)="saveAll()">
+        <table *ngIf="jobApplicationDetails$" class="data-table">
+          <thead>
+            <tr>
+              <th style="width:10%">SNo</th>
+              <th style="width:35%">Company Name</th>
+              <th style="width:35%">Position</th>
+              <th style="width:20%">Status</th>
+            </tr>
+          </thead>
+          <tbody formArrayName="applications">
+            <tr *ngFor="let app of jobApplicationDetails$; let i = index; trackBy: trackByApplicationId" [formGroupName]="i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ app.companyName }}</td>
+              <td>{{ app.position }}</td>
+              <td> <ng-select formControlName="status" [items]="statusOptions" bindValue="value">
+                </ng-select></td>
+            </tr>
+            <!-- Empty State -->
+            <tr *ngIf="!jobApplicationsForm">
+              <td colspan="4" class="no-records">
+                No records found
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="col-md-6" style="width:100%">
+          <button type="submit" class="save-btn" [disabled]="!jobApplicationsForm">
+            Save Changes
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<app-add-job-application-modal [isOpen]="isModalOpen" (closed)="onModalClosed()">
+
+  <!-- Custom content goes here -->
+  <p>This is the modal content that can be customized!</p>
+
+</app-add-job-application-modal>

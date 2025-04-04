@@ -1,0 +1,23 @@
+/* Using CSS variables for easy theming */
+:root {
+    --header-bg-color: #3f51b5;
+    --header-text-color: white;
+    --header-padding: 1.5rem;
+    --header-border-radius: 8px;
+  }
+  
+  .header-box {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: var(--header-padding);
+    border-radius: var(--header-border-radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .header-title {
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.2rem;
+  }
