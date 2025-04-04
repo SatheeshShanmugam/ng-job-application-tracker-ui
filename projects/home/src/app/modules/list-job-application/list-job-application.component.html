@@ -19,8 +19,9 @@
           <thead>
             <tr>
               <th style="width:10%">SNo</th>
-              <th style="width:35%">Company Name</th>
-              <th style="width:35%">Position</th>
+              <th style="width:25%">Company Name</th>
+              <th style="width:25%">Position</th>
+              <th style="width:20%">Date Applied</th>
               <th style="width:20%">Status</th>
             </tr>
           </thead>
@@ -29,6 +30,7 @@
               <td>{{ i + 1 }}</td>
               <td>{{ app.companyName }}</td>
               <td>{{ app.position }}</td>
+              <td>{{ app.createdAt | date }}</td>
               <td> <ng-select formControlName="status" [items]="statusOptions" bindValue="value">
                 </ng-select></td>
             </tr>
