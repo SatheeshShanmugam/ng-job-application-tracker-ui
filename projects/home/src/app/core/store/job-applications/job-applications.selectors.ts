@@ -1,6 +1,5 @@
 // job-application.selectors.ts
 import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
-import { ApiResponse } from '../../pages/api-response.model'; 
 import { IJobApplicationState, JobApplicationReducers } from './job-applications.reducers';
   
 export const jobApplicationFeatureKey = 'JobApplications';

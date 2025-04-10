@@ -1,7 +1,7 @@
 // job-application.actions.ts
 import { createAction, props } from '@ngrx/store';
-import { JobApplicationDetails } from '../../pages/job-application-detail.model';
-import { ApiError, ApiResponse, UpdateJobApplicationRequest } from '../../pages/api-response.model';
+import { ApiError, ApiResponse, UpdateJobApplicationRequest } from '../../models/api-response.model';
+import { JobApplicationDetails } from '../../models/job-application-detail.model';
 
 // Load Job Application
 export const loadJobApplications = createAction(

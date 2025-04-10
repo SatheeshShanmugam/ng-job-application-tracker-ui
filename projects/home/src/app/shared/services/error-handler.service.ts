@@ -1,7 +1,7 @@
 import { ErrorHandler, Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError, TimeoutError } from 'rxjs';
-import { ApiError } from '../../core/pages/api-response.model';
+import { ApiError } from '../../core/models/api-response.model';
 
 @Injectable(
   { providedIn: 'root' }

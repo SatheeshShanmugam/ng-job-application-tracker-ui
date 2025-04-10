@@ -3,12 +3,12 @@ import { FormArray, FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { BaseClass, WithDestroy } from '../../shared/utils/base-class';
 import { JobApplicationService } from '../../core/services/JobApplication.service';
 import { map, Observable, of } from 'rxjs';
-import { JobApplicationDetails } from '../../core/pages/job-application-detail.model';
-import { ApiError, UpdateJobApplicationRequest } from '../../core/pages/api-response.model';
+import { ApiError, UpdateJobApplicationRequest } from '../../core/models/api-response.model';
 import { Store } from '@ngrx/store';
 import { selectAllJobApplications, selectJobApplicationsError, selectJobApplicationsLoading } from '../../core/store/job-applications/job-applications.selectors';
 import { loadJobApplications, updateApplication } from '../../core/store/job-applications/job-applications.action';
 import { statusOptions } from '../../core/constants/status-options';
+import { JobApplicationDetails } from '../../core/models/job-application-detail.model';
 
 @Component({
   selector: 'app-list-job-application',
@@ -88,7 +88,7 @@ export class ListJobApplicationComponent extends WithDestroy(BaseClass) implemen
       .filter((control, index) => {
         const newStatus = Number(control.value['status']);
         const currentStatus = this.jobApplicationDetails_status_dic[index];
-        return newStatus === currentStatus;
+        return newStatus !== currentStatus;
       })
       .map((control, index) => ({
         ...this.jobApplicationDetails$[index],

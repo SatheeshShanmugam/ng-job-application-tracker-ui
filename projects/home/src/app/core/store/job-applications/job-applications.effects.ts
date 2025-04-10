@@ -4,9 +4,9 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import *  as actions from './job-applications.action';
-import { JobApplicationDetails } from '../../pages/job-application-detail.model';
 import { JobApplicationService } from '../../services/JobApplication.service';
-import { ApiResponse } from '../../pages/api-response.model';
+import { ApiResponse } from '../../models/api-response.model';
+
 
 
 @Injectable({ providedIn: 'root' })

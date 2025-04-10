@@ -2,9 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Inject, Injectable } from "@angular/core";
 import { BaseService } from "./Base.service";
 import { environment } from "../../../environments/environment";
-import { JobApplicationDetails } from "../pages/job-application-detail.model";
-import { ApiResponse } from "../pages/api-response.model";
 import { catchError, map, Observable, throwError } from "rxjs";
+import { ApiResponse } from "../models/api-response.model";
 
 
 /// JobApplicationService is a service that provides methods to interact with the job application API.

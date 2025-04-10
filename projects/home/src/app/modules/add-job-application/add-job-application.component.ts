@@ -4,7 +4,7 @@ import { Store } from "@ngrx/store";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import * as actions from "../../core/store/job-applications/job-applications.action";
 import { statusOptions } from "../../core/constants/status-options";
-import { JobApplicationDetails } from "../../core/pages/job-application-detail.model";
+import { JobApplicationDetails } from "../../core/models/job-application-detail.model";
 
 
 @Component({

@@ -1,8 +1,7 @@
 // job-application.reducer.ts
 import { Action, createReducer, on } from '@ngrx/store';
 import * as JobApplicationActions from './job-applications.action';
-import { JobApplicationDetails } from '../../pages/job-application-detail.model';
-import { ApiError, ApiResponse } from '../../pages/api-response.model';
+import { ApiResponse } from '../../models/api-response.model';
 
 
 export interface IJobApplicationState extends ApiResponse {
