@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
+import { environment } from '../environments/environment';
 
 
 
@@ -47,7 +48,7 @@ import { ButtonModule } from 'primeng/button';
   providers: [
     GlobalErrorHandlerServiceProviders,   
     GlobalHttpInterceptorProviders,
-    { provide: 'BASE_URL', useValue: 'https://localhost:44356/api' }
+    { provide: 'BASE_URL', useValue: environment.apiUrl }
     
   ],
   bootstrap: [AppComponent]

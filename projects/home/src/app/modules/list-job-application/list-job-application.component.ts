@@ -84,16 +84,15 @@ export class ListJobApplicationComponent extends WithDestroy(BaseClass) implemen
     const formArray = this.jobApplicationsForm.get('applications') as FormArray;
 
     // Prepare the updates array
-    const updates: JobApplicationDetails[] = formArray.controls
-      .filter((control, index) => {
-        const newStatus = Number(control.value['status']);
+    const updates: JobApplicationDetails[] = formArray.controls.map((control, index) => ({
+         ...this.jobApplicationDetails$[index],
+         status: control.value['status'],
+       }))
+      .filter((obj, index) => {
+        const newStatus = obj.status;
         const currentStatus = this.jobApplicationDetails_status_dic[index];
         return newStatus !== currentStatus;
-      })
-      .map((control, index) => ({
-        ...this.jobApplicationDetails$[index],
-        status: control.value['status'],
-      }));
+      });     
 
 
     if (updates.length > 0) {

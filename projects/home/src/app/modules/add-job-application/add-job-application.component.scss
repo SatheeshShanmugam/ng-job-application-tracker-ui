@@ -10,6 +10,10 @@
     align-items: center;
     z-index: 1000;
   }
+
+  .row{   
+    margin: 1%;
+  }
   
   .modal-content {
     background-color: white;
@@ -18,8 +22,7 @@
     min-width: 300px;
     max-width: 80%;
     max-height: 80vh;
-    overflow-y: auto;
-    width:70%
+    overflow-y: auto;    
   }
   
   .modal-header {
@@ -51,7 +54,6 @@
 
 .form-control {
   display: block;
-  width: 100%;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
