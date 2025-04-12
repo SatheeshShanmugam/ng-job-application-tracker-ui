@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpXsrfTokenExtractor } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpInterceptorFn, HttpRequest, HttpXsrfTokenExtractor } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable } from "rxjs";
 import { GlobalErrorHandlerService } from "../../shared/services/error-handler.service";
@@ -29,13 +29,11 @@ export class GlobalHttpInterceptorService implements HttpInterceptor {
         })       
     )
   }  
-}
-    
-
-
-  
+} 
 
 
 export const GlobalHttpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true }
 ];
+
+

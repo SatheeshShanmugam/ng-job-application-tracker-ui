@@ -9,17 +9,18 @@ import { selectAllJobApplications, selectJobApplicationsError, selectJobApplicat
 import { loadJobApplications, updateApplication } from '../../core/store/job-applications/job-applications.action';
 import { statusOptions } from '../../core/constants/status-options';
 import { JobApplicationDetails } from '../../core/models/job-application-detail.model';
+import { AddJobApplicationComponent } from '../add-job-application/add-job-application.component';
 
 @Component({
-  selector: 'app-list-job-application',
-  standalone: false,
+  selector: 'app-list-job-application',  
   templateUrl: './list-job-application.component.html',
-  styleUrl: './list-job-application.component.scss'
+  styleUrl: './list-job-application.component.scss',
+  standalone: false,
 })
 export class ListJobApplicationComponent extends WithDestroy(BaseClass) implements OnInit, AfterViewInit {
 
   jobApplicationDetails$: JobApplicationDetails[] = [];
-  jobApplicationDetails_status_dic: { [key: number]: string | number } = {};
+  jobApplicationDetails_status_dic: Record<number, string | number> = {};
   isSuccess$: Observable<boolean>;
   error$: Observable<ApiError[] | null>;
   jobApplicationsForm: FormGroup = null!;

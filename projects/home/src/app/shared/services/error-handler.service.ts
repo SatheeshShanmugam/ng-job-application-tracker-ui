@@ -8,7 +8,7 @@ import { ApiError } from '../../core/models/api-response.model';
 )
 export class GlobalErrorHandlerService implements ErrorHandler {
   private resError: ApiError[] = [];
-  private apiError: ApiError = <ApiError>{};
+  private apiError: ApiError = {} as ApiError;
   constructor() {}
 
   public handleError(error: Error | HttpErrorResponse) {
